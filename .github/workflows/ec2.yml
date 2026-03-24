@@ -8,13 +8,15 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Checkout code
+            - name: Checkout the code
               uses: actions/checkout@v6
+              with:
+                ref:  aws-project
 
             - name: SSH into EC2 instance and run deploy script
               uses: appleboy/ssh-action@v1
               with:
-                host: 3.235.150.154
+                host: 98.86.148.210
                 username: ec2-user
                 key: ${{ secrets.EC2_KEY }}
-                script_path: resources/deploy_ec2.sh
+                script: resources/deploy_ec2.sh

@@ -3,6 +3,8 @@ name: Test
 on:
     workflow_dispatch:
     push:
+        branches:
+            - aws-project
 
 jobs:
     test:
@@ -11,6 +13,8 @@ jobs:
         steps:
         - name: Checkout code
           uses: actions/checkout@v5
+          with:
+            ref:  aws-project
 
         - name: Set up Python
           uses: actions/setup-python@v6
@@ -26,4 +30,9 @@ jobs:
         - name: Deploy Lambda APP
           uses: benc-uk/workflow-dispatch@v1.2.4
           with:
-            workflow: Deploy
+            workflow: 'lambda.yml'
+
+        - name: Deploy EC2 APP
+          uses: benc-uk/workflow-dispatch@v1.2.4
+          with:
+            workflow: 'ec2.yml'
