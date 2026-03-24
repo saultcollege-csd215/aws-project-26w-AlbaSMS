@@ -5,7 +5,6 @@
 # -x : print the commands as they get executed (so they show up in GitHub Actions logs)
 set -eux
 
-
 # Update system packages and install needed software
 dnf update -y
 dnf install -y git python39 nginx
@@ -16,10 +15,7 @@ APP_DIR=/home/ec2-user/dice
 mkdir -p $APP_DIR
 
 # Clone your application repository (replace with your repo URL)
-git clone !!!Your clone URL here!!! $APP_DIR
-
-# Set the owner of the repo folder to be the user account that will ultimately run the app
-chown -R ec2-user:ec2-user $APP_DIR
+git clone https://github.com/saultcollege-csd215/aws-project-26w-AlbaSMS.git $APP_DIR
 
 cd $APP_DIR
 # Setup Python virtual environment and install dependencies
@@ -29,6 +25,9 @@ pip install -r app/requirements_flask.txt
 pip install gunicorn
 
 deactivate # Exit the Python virtual environment
+
+# Set the owner of the repo folder to be the user account that will ultimately run the app
+chown -R ec2-user:ec2-user $APP_DIR
 
 # --- Create systemd service ---
 cat <<EOF > /etc/systemd/system/diceapp.service
