@@ -10,7 +10,11 @@ set -eux
 cd /home/ec2-user/dice
 
 git fetch --all
+<<<<<<< HEAD
+git switch aws-project
+=======
 git switch main # Your lab branch name here
+>>>>>>> origin/main
 
 sudo systemctl restart diceapp
 sudo systemctl status diceapp --no-pager -l

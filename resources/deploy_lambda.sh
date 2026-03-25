@@ -1,7 +1,15 @@
 #!/bin/bash
 
 # --- Configuration ---
+<<<<<<< HEAD
+<<<<<<< HEAD
+LAMBDA_NAME="csd215-lambda"
+=======
 LAMBDA_NAME="<the name of your lambda function>"
+>>>>>>> 923be67774456382ef595da79923d9fcdb5a168c
+=======
+LAMBDA_NAME="<the name of your lambda function>"
+>>>>>>> origin/main
 REGION="us-east-1"
 ROOT=.
 SOURCE_DIR="$ROOT/app"
@@ -14,8 +22,18 @@ ZIP_FILE="lambda_function.zip"
 set -eux
 
 # Fail early if LAMBDA_NAME is not set properly
+<<<<<<< HEAD
+<<<<<<< HEAD
+if [[ -z "${csd215-lambda// }" || "$LAMBDA_NAME" == \<* ]]; then
+    echo "[ERROR] You did not set csd215-lambda in your deployment script."
+=======
 if [[ -z "${LAMBDA_NAME// }" || "$LAMBDA_NAME" == \<* ]]; then
     echo "[ERROR] You did not set LAMBDA_NAME in your deployment script."
+>>>>>>> 923be67774456382ef595da79923d9fcdb5a168c
+=======
+if [[ -z "${LAMBDA_NAME// }" || "$LAMBDA_NAME" == \<* ]]; then
+    echo "[ERROR] You did not set LAMBDA_NAME in your deployment script."
+>>>>>>> origin/main
     exit 1
 fi
 
@@ -37,9 +55,13 @@ cd ..
 
 echo "[4/4] Deploying to AWS Lambda..."
 
+<<<<<<< HEAD
+aws lambda update-function-code --function-name "$LAMBDA_NAME" --zip-file "fileb://$ZIP_FILE" --region "$REGION"
+=======
 # Replace these two lines with a command that updates your Lambda function code with the new $ZIP_FILE
 echo "You need to update your deployment script to actually deploy the Lambda function."
 exit 1
 
+>>>>>>> origin/main
 
 echo "--- Deployment completed for $LAMBDA_NAME ---"

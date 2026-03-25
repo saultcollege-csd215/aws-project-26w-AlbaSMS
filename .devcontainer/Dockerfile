@@ -1,5 +1,7 @@
 FROM mcr.microsoft.com/vscode/devcontainers/python:3.9
 
+RUN rm -f /etc/apt/sources.list.d/yarn.list
+
 # Install necessary packages
 RUN apt-get update && apt-get install -y \
     curl \
