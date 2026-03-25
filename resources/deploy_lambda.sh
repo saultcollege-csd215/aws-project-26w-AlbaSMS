@@ -1,7 +1,11 @@
 #!/bin/bash
 
 # --- Configuration ---
+<<<<<<< HEAD
 LAMBDA_NAME="csd215-lambda"
+=======
+LAMBDA_NAME="<the name of your lambda function>"
+>>>>>>> 923be67774456382ef595da79923d9fcdb5a168c
 REGION="us-east-1"
 ROOT=.
 SOURCE_DIR="$ROOT/app"
@@ -14,8 +18,13 @@ ZIP_FILE="lambda_function.zip"
 set -eux
 
 # Fail early if LAMBDA_NAME is not set properly
+<<<<<<< HEAD
 if [[ -z "${csd215-lambda// }" || "$LAMBDA_NAME" == \<* ]]; then
     echo "[ERROR] You did not set csd215-lambda in your deployment script."
+=======
+if [[ -z "${LAMBDA_NAME// }" || "$LAMBDA_NAME" == \<* ]]; then
+    echo "[ERROR] You did not set LAMBDA_NAME in your deployment script."
+>>>>>>> 923be67774456382ef595da79923d9fcdb5a168c
     exit 1
 fi
 
