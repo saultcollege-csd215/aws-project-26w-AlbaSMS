@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: Lambda deployment
 
 on:
@@ -25,3 +26,6 @@ jobs:
       run: |
         chmod +x resources/deploy_lambda.sh
         resources/deploy_lambda.sh
+=======
+name: Lambda deployment
+>>>>>>> origin/main

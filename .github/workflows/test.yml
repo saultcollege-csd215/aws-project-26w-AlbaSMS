@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: Test
 
 on:
@@ -36,3 +37,6 @@ jobs:
           uses: benc-uk/workflow-dispatch@v1.2.4
           with:
             workflow: 'ec2.yml'
+=======
+name: Test
+>>>>>>> origin/main

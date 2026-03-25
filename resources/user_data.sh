@@ -6,9 +6,13 @@
 set -eux
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 923be67774456382ef595da79923d9fcdb5a168c
+=======
+
+>>>>>>> origin/main
 # Update system packages and install needed software
 dnf update -y
 dnf install -y git python39 nginx
@@ -20,13 +24,19 @@ mkdir -p $APP_DIR
 
 # Clone your application repository (replace with your repo URL)
 <<<<<<< HEAD
+<<<<<<< HEAD
 git clone https://github.com/saultcollege-csd215/aws-project-26w-AlbaSMS.git $APP_DIR
 =======
+=======
+>>>>>>> origin/main
 git clone !!!Your clone URL here!!! $APP_DIR
 
 # Set the owner of the repo folder to be the user account that will ultimately run the app
 chown -R ec2-user:ec2-user $APP_DIR
+<<<<<<< HEAD
 >>>>>>> 923be67774456382ef595da79923d9fcdb5a168c
+=======
+>>>>>>> origin/main
 
 cd $APP_DIR
 # Setup Python virtual environment and install dependencies
@@ -38,11 +48,14 @@ pip install gunicorn
 deactivate # Exit the Python virtual environment
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Set the owner of the repo folder to be the user account that will ultimately run the app
 chown -R ec2-user:ec2-user $APP_DIR
 
 =======
 >>>>>>> 923be67774456382ef595da79923d9fcdb5a168c
+=======
+>>>>>>> origin/main
 # --- Create systemd service ---
 cat <<EOF > /etc/systemd/system/diceapp.service
 [Unit]
@@ -85,7 +98,11 @@ EOF
 # --- Start and enable Nginx ---
 systemctl enable nginx
 <<<<<<< HEAD
+<<<<<<< HEAD
 systemctl restart nginx
 =======
 systemctl restart nginx
 >>>>>>> 923be67774456382ef595da79923d9fcdb5a168c
+=======
+systemctl restart nginx
+>>>>>>> origin/main

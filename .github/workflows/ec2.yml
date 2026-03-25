@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 name: EC2 Deployment
 
 on:
@@ -20,3 +21,6 @@ jobs:
                 username: ec2-user
                 key: ${{ secrets.EC2_KEY }}
                 script_path: resources/deploy_ec2.sh
+=======
+name: EC2 Deployment
+>>>>>>> origin/main
